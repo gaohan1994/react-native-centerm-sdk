@@ -1,6 +1,5 @@
 import React from 'react';
-import { 
-  Dimensions, 
+import {
   ActivityIndicator, 
   TouchableOpacity, 
   Text, 
@@ -10,71 +9,11 @@ import {
   ActivityIndicatorProps,
   StyleSheet,
 } from 'react-native';
-import { ThemeHoc, ScreenUtil } from '../Theme';
+import { ThemeHoc } from '../Theme';
 import { ContextProps, ThemeType } from '../Theme/ThemeHoc';
+import { styles } from './ButtonConfig';
 
-const { width } = Dimensions.get('window');
-
-const ButtonConfig = {
-  big: {
-    height: ScreenUtil.autoWidth(45),
-    width: width * 0.8,
-  },
-  normal: {
-    height: ScreenUtil.autoWidth(45),
-    width: width * 0.4,
-  },
-  small: {
-    paddingHorizontal: ScreenUtil.autoWidth(10),
-    paddingVertical: ScreenUtil.autoWidth(8),
-  }
-};
-
-const styles: any = {
-  button: (type: ButtonTypeProperty, theme: ThemeType) => ({
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: theme.primary,
-    backgroundColor: type === 'primary' ? theme.primary : 'transparent',
-    marginTop: ScreenUtil.autoWidth(5),
-  }),
-  size: (size: 'big' | 'normal' | 'small') => {
-    switch (size) {
-      case 'big':
-        return { ...ButtonConfig.big };
-      case 'normal':
-        return { ...ButtonConfig.normal };
-      case 'small':
-        return { ...ButtonConfig.small };
-      default:
-        return { ...ButtonConfig.big };
-    }
-  },
-  radius: (radius: boolean) => {
-    if (radius === true) {
-      return { borderRadius: ScreenUtil.autoWidth(22) };
-    } else {
-      return { };
-    }
-  },
-  shadow: {
-    shadowOffset: { width: 2, height: 2 }, 
-    shadowOpacity: 0.6, 
-    shadowRadius: 6, 
-    elevation: 10 
-  },
-  title: (type: ButtonTypeProperty, size: 'big' | 'normal' | 'small', theme: ThemeType) => ({
-    color: type === 'primary' ? 'white' : theme.primary,
-    fontSize: ScreenUtil.setSpText(size !== 'small' ? 15 : 12),
-    textAlign: 'center',
-  }),
-  loadding: {
-    marginVertical: 2,
-  }
-};
-
-const ButtonDefaultProps: ButtonProperties = {
+export const ButtonDefaultProps: ButtonProperties = {
   title: '',
   type: 'primary',
   size: 'big',
@@ -88,15 +27,18 @@ const defaultLoadingProps = (type?: ButtonTypeProperty, theme?: ThemeType): Acti
 });
 
 export type ButtonTypeProperty = 'primary' | 'ghost';
+export type ButtonSizeProperty = 'big' | 'normal' | 'small';
 
 export interface ButtonProperties {
   title: string | number;
   titleStyle?: TextStyle;
-  size?: 'big' | 'normal' | 'small';
+  size?: ButtonSizeProperty;
   type?: ButtonTypeProperty;
   loading?: boolean;
   loadingStyle?: any;
   radius?: boolean;
+  linearGradientProps?: any;
+  ViewComponent?: any;
 }
 
 export type ButtonProps = ButtonProperties & TouchableOpacityProps & Partial<ContextProps>;
@@ -107,6 +49,15 @@ class Button extends React.Component<ButtonProps, Stete> {
 
   static defaultProps: ButtonProperties = ButtonDefaultProps;
 
+  componentDidMount() {
+    const { linearGradientProps, ViewComponent } = this.props;
+    if (linearGradientProps && !ViewComponent) {
+      console.error(
+        `You need to pass a ViewComponent to use linearGradientProps !\nExample: ViewComponent={require('react-native-linear-gradient')}`
+      );
+    }
+  }
+  
   public buildStyle = (): ViewStyle => {
     const { type, size, radius, theme, style = {} } = this.props;
     

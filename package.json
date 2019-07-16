@@ -20,5 +20,8 @@
     "webpack-cli": "^3.3.6"
   },
   "author": "Ghan",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-native-centerm-sdk": "^1.0.4"
+  }
 }

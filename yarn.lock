@@ -5035,6 +5035,11 @@ react-is@^16.8.1:
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.8.6.tgz?cache=0&sync_timestamp=1563040284281&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha1-W7weLSkUHJ+9/tRWND/ivEMKahY=
 
+react-native-centerm-sdk@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/react-native-centerm-sdk/-/react-native-centerm-sdk-1.0.4.tgz#ee2e81f5fa55df41a27d50b9d92e5da8504bdd6c"
+  integrity sha512-EzYg5B22Eu1NBTb8HOMQsqK+OYGKKR2rEHjzVu7FRjMCs+c4ZAGTHewOry5/JgQzpSOTAfLaU2NpEArKXQhkvQ==
+
 react-native@0.57.4:
   version "0.57.4"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.57.4.tgz#cb7ba78e8be420737868fa9a97caa897a534c893"
