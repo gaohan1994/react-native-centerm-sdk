@@ -27,7 +27,6 @@ const ThemeHoc: ThemeHocProps<any> = (WrappedComponent: any, ThemeKey: string) =
         <ThemeConsumer>
           {
             (context: any) => {
-              console.log('context: ', context);
               const props = {
                 ...rest,
                 children,

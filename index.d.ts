@@ -24,6 +24,8 @@ export interface ButtonProperties {
   loading?: boolean;
   loadingStyle?: any;
   radius?: boolean;
+  linearGradientProps?: any;
+  ViewComponent?: any;
 }
 export type ButtonProps = ButtonProperties & TouchableOpacityProps;
 
