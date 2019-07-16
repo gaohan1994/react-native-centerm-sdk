@@ -9,23 +9,22 @@ declare module "react-native-centerm-sdk" {
     callback?: (params: T) => any,
     errorCallback?: (params: Error) => any,
   ): Promise<T>;
-
-
-  /**
-   * [ButtonProps]
-   */
-  export type ButtonTypeProperty = 'primary' | 'ghost';
-
-  export interface ButtonProperties {
-    title: string | number;
-    titleStyle?: TextStyle;
-    size?: 'big' | 'normal' | 'small';
-    type?: ButtonTypeProperty;
-    loading?: boolean;
-    loadingStyle?: any;
-    radius?: boolean;
-  }
-  export type ButtonProps = ButtonProperties & TouchableOpacityProps;
-
-  export class Button extends React.Component <ButtonProps, any> {}
 }
+
+/**
+ * [ButtonProps]
+ */
+export type ButtonTypeProperty = 'primary' | 'ghost';
+
+export interface ButtonProperties {
+  title: string | number;
+  titleStyle?: TextStyle;
+  size?: 'big' | 'normal' | 'small';
+  type?: ButtonTypeProperty;
+  loading?: boolean;
+  loadingStyle?: any;
+  radius?: boolean;
+}
+export type ButtonProps = ButtonProperties & TouchableOpacityProps;
+
+export declare class Button extends React.Component <ButtonProps, any> {}

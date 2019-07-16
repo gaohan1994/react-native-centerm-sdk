@@ -8,6 +8,7 @@ import {
   TextStyle, 
   ActivityIndicatorProps,
   StyleSheet,
+  View,
 } from 'react-native';
 import { ThemeHoc } from '../Theme';
 import { ContextProps, ThemeType } from '../Theme/ThemeHoc';
@@ -81,20 +82,39 @@ class Button extends React.Component<ButtonProps, Stete> {
   }
 
   render () {
-    const { type, theme, loading, loadingStyle, title, style, ...rest } = this.props;
+    const { 
+      type, 
+      theme, 
+      loading, 
+      loadingStyle, 
+      title, 
+      style, 
+      onPress,
+      linearGradientProps,
+      ViewComponent = View,
+      ...rest 
+    } = this.props;
+    
+    const TouchableWrapperProps: TouchableOpacityProps = {
+      ...rest,
+      onPress,
+      activeOpacity: 0.3,
+    };
     const loadingProps = { ...defaultLoadingProps(type, theme) };
     return (
-      <TouchableOpacity style={this.buildStyle()} {...rest} >
-        {loading && (
-          <ActivityIndicator 
-            style={[styles.loading, loadingStyle]}
-            {...loadingProps}
-          />
-        )}
+      <TouchableOpacity {...TouchableWrapperProps} >
+        <ViewComponent style={this.buildStyle()} {...linearGradientProps} >
+          {loading && (
+            <ActivityIndicator 
+              style={[styles.loading, loadingStyle]}
+              {...loadingProps}
+            />
+          )}
 
-        {!loading && !!title && (
-          <Text style={this.buildTextStyle()} >{title}</Text>
-        )}
+          {!loading && !!title && (
+            <Text style={this.buildTextStyle()} >{title}</Text>
+          )}
+        </ViewComponent>
       </TouchableOpacity>
     );
   }
