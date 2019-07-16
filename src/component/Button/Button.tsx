@@ -7,7 +7,8 @@ import {
   ViewStyle, 
   TouchableOpacityProps, 
   TextStyle, 
-  ActivityIndicatorProps
+  ActivityIndicatorProps,
+  StyleSheet,
 } from 'react-native';
 import { ThemeHoc, ScreenUtil } from '../Theme';
 import { ContextProps, ThemeType } from '../Theme/ThemeHoc';
@@ -109,24 +110,23 @@ class Button extends React.Component<ButtonProps, Stete> {
   public buildStyle = (): ViewStyle => {
     const { type, size, radius, theme, style = {} } = this.props;
     
-    const buttonStyle = {
+    const buttonStyle: any = [{
       ...styles.button(type, theme),
       ...styles.size(size),
       ...styles.radius(radius),
       ...styles.shadow,
-      style,
-    };
-    return buttonStyle;
+    }].concat(style);
+    
+    return StyleSheet.flatten(buttonStyle);
   }
 
   public buildTextStyle = (): TextStyle => {
     const { type, size, theme, titleStyle = {} } = this.props;
 
-    const textStyle = {
-      ...styles.title(type, size, theme),
-      titleStyle
-    };
-    return textStyle;
+    const textStyle: any = [{
+      ...styles.title(type, size, theme), 
+    }].concat(titleStyle);
+    return StyleSheet.flatten(textStyle);
   }
 
   render () {
