@@ -2,7 +2,7 @@ var path = require('path');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: "./index.ts",
+  entry: "./index.js",
   mode: "development",
   module: {
     rules: [
