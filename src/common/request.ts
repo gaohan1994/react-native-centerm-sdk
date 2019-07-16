@@ -16,7 +16,7 @@ const ConsoleUtil = (message: any, title?: string): void => {
  * 默认错误处理函数
  * @param error RequsetError
  */
-const defaultErrorCallback = async (error) => {
+const defaultErrorCallback = async (error: any) => {
   ConsoleUtil(error, '[ERROR]');
 };
 
@@ -25,8 +25,8 @@ export const request = async (
   ...args: Array<any>
 ): Promise<any> => {
   const argByType: any = {};
-  const functions = [];
-  let callback;
+  const functions: any = [];
+  let callback: any;
   let errorCallback = defaultErrorCallback;
 
   args.forEach(arg => {

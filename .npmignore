@@ -1,0 +1,11 @@
+node_modules/
+component/
+common/
+/.git/
+/.vscode/
+/docs/
+.gitignore
+.npmignore
+tslint.json
+tsconfig.json
+*.log
