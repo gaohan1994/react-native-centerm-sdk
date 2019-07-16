@@ -81,10 +81,22 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./index.ts":
+/*!******************!*\
+  !*** ./index.ts ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar common_1 = __webpack_require__(/*! ./src/common */ \"./src/common/index.ts\");\nexports.request = common_1.request;\nvar component_1 = __webpack_require__(/*! ./src/component */ \"./src/component/index.ts\");\nexports.Button = component_1.Button;\n\n\n//# sourceURL=webpack:///./index.ts?");
+
+/***/ }),
 
 /***/ "./src/common/index.ts":
 /*!*****************************!*\
@@ -203,18 +215,6 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst 
 
 "use strict";
 eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Button_1 = __webpack_require__(/*! ./Button */ \"./src/component/Button/index.ts\");\nexports.Button = Button_1.Button;\n\n\n//# sourceURL=webpack:///./src/component/index.ts?");
-
-/***/ }),
-
-/***/ "./src/index.ts":
-/*!**********************!*\
-  !*** ./src/index.ts ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar common_1 = __webpack_require__(/*! ./common */ \"./src/common/index.ts\");\nexports.request = common_1.request;\nvar component_1 = __webpack_require__(/*! ./component */ \"./src/component/index.ts\");\nexports.Button = component_1.Button;\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ }),
 

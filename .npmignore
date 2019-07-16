@@ -9,3 +9,5 @@ common/
 tslint.json
 tsconfig.json
 *.log
+# src/
+dist/
