@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gaohan1994/react-native-centerm-sdk.svg?branch=master)](https://travis-ci.org/gaohan1994/react-native-centerm-sdk)
+
 # React-Native-Centerm-Sdk
 
 A UI library for react-native. build for Centerm Stuff.
