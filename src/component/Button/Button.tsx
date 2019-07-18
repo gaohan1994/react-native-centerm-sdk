@@ -30,7 +30,7 @@ const defaultLoadingProps = (type?: ButtonTypeProperty, theme?: ThemeType): Acti
 export type ButtonTypeProperty = 'primary' | 'ghost';
 export type ButtonSizeProperty = 'big' | 'normal' | 'small';
 
-export interface ButtonProperties {
+export type ButtonProperties = {
   title: string | number;
   titleStyle?: TextStyle;
   size?: ButtonSizeProperty;
@@ -61,7 +61,6 @@ class Button extends React.Component<ButtonProps, Stete> {
   
   public buildStyle = (): ViewStyle => {
     const { type, size, radius, theme, style = {} } = this.props;
-    
     const buttonStyle: any = [{
       ...styles.button(type, theme),
       ...styles.size(size),
@@ -74,10 +73,8 @@ class Button extends React.Component<ButtonProps, Stete> {
 
   public buildTextStyle = (): TextStyle => {
     const { type, size, theme, titleStyle = {} } = this.props;
-
-    const textStyle: any = [{
-      ...styles.title(type, size, theme), 
-    }].concat(titleStyle);
+    const textStyle: any = [{ ...styles.title(type, size, theme) }].concat(titleStyle);
+    
     return StyleSheet.flatten(textStyle);
   }
 
@@ -92,7 +89,7 @@ class Button extends React.Component<ButtonProps, Stete> {
       onPress,
       linearGradientProps,
       ViewComponent = View,
-      ...rest 
+      ...rest
     } = this.props;
     
     const TouchableWrapperProps: TouchableOpacityProps = {
@@ -120,4 +117,4 @@ class Button extends React.Component<ButtonProps, Stete> {
   }
 }
 
-export default ThemeHoc(Button, 'Button');
+export default ThemeHoc(Button);

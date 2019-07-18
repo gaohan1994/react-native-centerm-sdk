@@ -15,8 +15,6 @@ yarn add react-native-centerm-sdk
 
 ## Components
 
----
-
 ### Button
 
 ![button](/screenshots/button.jpg)

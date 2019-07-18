@@ -2,12 +2,17 @@ import React from 'react';
 import { ThemeConsumer, Colors } from './index';
 import { ColorsType } from './Colors';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+// type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
-type ThemeHocProps<WrappedProps> = <Props extends WrappedProps>(
-  Component: React.ComponentType<Props>,
-  ThemeKey: string,
-) => React.ComponentType<Omit<Props, keyof WrappedProps>>;
+// type ThemeHocProps<WrappedProps> = <Props extends WrappedProps>(
+//   Component: React.ComponentType<Props>,
+//   ThemeKey: string,
+// ) => React.ComponentType<Omit<Props, keyof WrappedProps>>;
+
+type Exclude<T, U> = T extends U ? never : T;
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+type HOC<InjectProps> = <Props extends InjectProps>(Component: React.ComponentType<Props>) => 
+  React.ComponentType<Omit<Props, keyof InjectProps>>;
 
 export type ThemeType = ColorsType;
 
@@ -18,8 +23,7 @@ export type ContextProps = {
 const isClassComponent = (Component: any) => 
   Boolean(Component.prototype && Component.prototype.isReactComponent);
 
-const ThemeHoc: ThemeHocProps<any> = (WrappedComponent: any, ThemeKey: string) => {
-
+const ThemeHoc: HOC<{}> = (WrappedComponent: any) => {
   class ThemeComponent extends React.Component<any, any> {
     render () {
       const { forwardedRef, children, ...rest } = this.props;
@@ -43,11 +47,12 @@ const ThemeHoc: ThemeHocProps<any> = (WrappedComponent: any, ThemeKey: string) =
     }
   }
 
-  // const name = ThemeKey 
-  //   ? `Theme.${ThemeKey}`
-  //   : `Theme.${WrappedComponent.displayName || WrappedComponent.name || 'Component'}`;
-
-  // ThemeComponent['displayName'] = name;
+  /**
+   * const name = ThemeKey 
+   * ? `Theme.${ThemeKey}`
+   * : `Theme.${WrappedComponent.displayName || WrappedComponent.name || 'Component'}`;
+   * ThemeComponent['displayName'] = name;
+   */
   return ThemeComponent;
 };  
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { Colors } from './index';
 
 const ThemeContext = React.createContext({});
 
-type ThemeProviderProps = { }
+type ThemeProviderProps = { };
 
 class ThemeProvider extends React.Component<ThemeProviderProps, any> {
 

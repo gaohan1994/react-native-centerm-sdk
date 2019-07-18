@@ -11,3 +11,6 @@ tsconfig.json
 *.log
 # src/
 dist/
+screenshots/
+webpack.config.js
+.jest/
