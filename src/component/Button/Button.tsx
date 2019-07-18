@@ -14,19 +14,6 @@ import { ThemeHoc } from '../Theme';
 import { ContextProps, ThemeType } from '../Theme/ThemeHoc';
 import { styles } from './ButtonConfig';
 
-export const ButtonDefaultProps: ButtonProperties = {
-  title: '',
-  type: 'primary',
-  size: 'big',
-  radius: true,
-  loading: false,
-};
-
-const defaultLoadingProps = (type?: ButtonTypeProperty, theme?: ThemeType): ActivityIndicatorProps => ({
-  color: type === 'primary' ? 'white' : theme && theme.primary || '',
-  size: 'small',
-});
-
 export type ButtonTypeProperty = 'primary' | 'ghost';
 export type ButtonSizeProperty = 'big' | 'normal' | 'small';
 
@@ -40,8 +27,20 @@ export type ButtonProperties = {
   radius?: boolean;
   linearGradientProps?: any;
   ViewComponent?: any;
-}
+};
 
+export const ButtonDefaultProps: ButtonProperties = {
+  title: '',
+  type: 'primary',
+  size: 'big',
+  radius: true,
+  loading: false,
+};
+
+const defaultLoadingProps = (type?: ButtonTypeProperty, theme?: ThemeType): ActivityIndicatorProps => ({
+  color: type === 'primary' ? 'white' : theme && theme.primary || '',
+  size: 'small',
+});
 export type ButtonProps = ButtonProperties & TouchableOpacityProps & Partial<ContextProps>;
 
 type Stete = { };
