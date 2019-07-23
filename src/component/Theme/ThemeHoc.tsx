@@ -2,13 +2,6 @@ import React from 'react';
 import { ThemeConsumer, Colors } from './index';
 import { ColorsType } from './Colors';
 
-// type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
-// type ThemeHocProps<WrappedProps> = <Props extends WrappedProps>(
-//   Component: React.ComponentType<Props>,
-//   ThemeKey: string,
-// ) => React.ComponentType<Omit<Props, keyof WrappedProps>>;
-
 type Exclude<T, U> = T extends U ? never : T;
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 type HOC<InjectProps> = <Props extends InjectProps>(Component: React.ComponentType<Props>) => 

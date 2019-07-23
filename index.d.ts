@@ -29,4 +29,4 @@ export interface ButtonProperties {
 }
 export type ButtonProps = ButtonProperties & TouchableOpacityProps;
 
-export declare class Button extends React.Component <ButtonProps, any> {}
+export declare class Button extends React.Component <ButtonProps, any> {};
