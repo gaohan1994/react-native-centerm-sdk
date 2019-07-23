@@ -21,7 +21,7 @@ yarn add react-native-centerm-sdk
 
 ### Button
 
-![button](/screenshots/button.jpg)
+<img src="http://net.huanmusic.com/button.jpg" width="100" height="200" />
 
 ```js
 import { Button } from 'react-native-centerm-sdk';
@@ -30,6 +30,41 @@ class Page extends React.Component<any, any> {
   render () {
     return (
       <Button title="hello world" />
+    );
+  }
+}
+```
+
+### ListItem
+
+<img src="http://net.huanmusic.com/ListItem.jpg" width="100" height="200" />
+
+```js
+import { ListItem } from 'react-native-centerm-sdk';
+
+class Page extends React.Component<any, any> {
+  render () {
+    return (
+      <View>
+        <ListItem
+          icon={{uri: 'http://net.huanmusic.com/react.png'}}
+          bottomBorder={true}
+          title={'React Native'}
+          subTitle="React Native使你只使用JavaScript也能编写原生移动应用。 它在设计原理上和React一致，通过声明式的组件机制来搭建丰富多彩的用户界面。"
+        />
+        <ListItem
+          icon={{uri: 'http://net.huanmusic.com/react.png'}}
+          bottomBorder={true}
+          title={'ListItem Uasge'}
+          detailTitle={'SwipeButton'}
+          detailSubTitle={'Uasge'}
+          swipeButtons={[
+            <ListItemSwipeButton onPress={() => { console.log('cancel'); }} title="cancel" type="cancel" key="cancel" />,
+            <ListItemSwipeButton onPress={() => { console.log('info'); }} title="info" type="info" key="info" />,
+            <ListItemSwipeButton onPress={() => { console.log('delete'); }} title="delete" type="delete" key="delete" />,
+          ]}
+        />
+      </View>
     );
   }
 }
