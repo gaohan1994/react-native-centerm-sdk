@@ -29,4 +29,40 @@ export interface ButtonProperties {
 }
 export type ButtonProps = ButtonProperties & TouchableOpacityProps;
 
-export declare class Button extends React.Component <ButtonProps, any> {};
+export declare class Button extends React.Component<ButtonProps, any> {};
+
+export type SwipeButtonProps = {
+  type?: SwipeButtonType;
+  title?: ReactNodeType;
+  titleStyle?: TextStyle;
+} & TouchableOpacityProperties;
+
+declare class SwipeButton extends React.Component<SwipeButtonProps, any> {};
+
+export type ListItemProps = { 
+  containerStyle?: ViewStyle;
+  topBorder?: boolean;
+  bottomBorder?: boolean;
+  leftElement?: ReactNodeType;
+  icon?: ReactNodeType;
+  contentContainer?: ViewStyle;
+  title?: ReactNodeType;
+  titleProps?: TextProperties;
+  titleStyle?: TextStyle;
+  subTitle?: ReactNodeType;
+  subTitleProps?: TextProperties;
+  subTitleStyle?: TextStyle;
+  detailContentContainer?: ViewStyle;
+  detailTitle?: ReactNodeType;
+  detailTitleProps?: TextProperties;
+  detailTitleStyle?: TextStyle;
+  detailSubTitle?: ReactNodeType;
+  detailSubTitleProps?: TextProperties;
+  detailSubTitleStyle?: TextStyle;
+  swipeButtons?: any[];
+  swipeContainerStyle?: ViewStyle;
+} & TouchableOpacityProperties;
+
+export declare class ListItem extends React.Component<ListItemProps, any> {
+  static SwipeButton = typeof SwipeButton;
+};
