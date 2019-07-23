@@ -1,2 +1,2 @@
 export { Button } from './Button';
-export { ListItem } from './ListItem';
+export { ListItem, ListItemSwipeButton } from './ListItem';

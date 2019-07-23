@@ -52,8 +52,6 @@ type ListItemState = {
 
 class ListItem extends React.Component<ListItemProps, ListItemState> {
 
-  static SwipeButton = SwipeButton;
-
   state = {
     swipeWidth: 0
   };

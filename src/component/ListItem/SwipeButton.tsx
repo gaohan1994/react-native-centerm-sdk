@@ -23,6 +23,7 @@ class SwipeButton extends React.Component<SwipeButtonProps> {
       style,
       ...rest
     } = this.props;
+
     return (
       <TouchableOpacity
         style={StyleSheet.flatten([

@@ -1,5 +1,14 @@
 import React from 'react';
-import { TouchableOpacityProps, TextStyle }  from 'react-native';
+import { 
+  TouchableOpacityProps, 
+  TextStyle, 
+  TouchableOpacityProperties,
+  TextProperties,
+  ViewStyle,
+}  from 'react-native';
+
+export type ReactNodeType = React.ReactElement<any> | string | number | Function | boolean;
+
 declare module "react-native-centerm-sdk" { 
 
   export function request <T>(
@@ -29,15 +38,17 @@ export interface ButtonProperties {
 }
 export type ButtonProps = ButtonProperties & TouchableOpacityProps;
 
-export declare class Button extends React.Component<ButtonProps, any> {};
+export declare class Button extends React.Component<ButtonProps, any> {}
 
-export type SwipeButtonProps = {
+export type SwipeButtonType = 'info' | 'delete' | 'cancel';
+
+export type ListItemSwipeButtonProps = {
   type?: SwipeButtonType;
   title?: ReactNodeType;
   titleStyle?: TextStyle;
 } & TouchableOpacityProperties;
 
-declare class SwipeButton extends React.Component<SwipeButtonProps, any> {};
+declare class ListItemSwipeButton extends React.Component<ListItemSwipeButtonProps, any> {}
 
 export type ListItemProps = { 
   containerStyle?: ViewStyle;
@@ -63,6 +74,4 @@ export type ListItemProps = {
   swipeContainerStyle?: ViewStyle;
 } & TouchableOpacityProperties;
 
-export declare class ListItem extends React.Component<ListItemProps, any> {
-  static SwipeButton = typeof SwipeButton;
-};
+export declare class ListItem extends React.Component<ListItemProps, any> {}
