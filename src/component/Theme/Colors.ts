@@ -9,7 +9,8 @@ export type ColorsType = {
 };
 
 export const Colors = {
-  primary: '#1273e4',
+  // primary: '#1273e4',
+  primary: '#4598f2',
   infoColor: '#eca961',
   deleteColor: '#d75452',
   cancelColor: '#c8c7cd',

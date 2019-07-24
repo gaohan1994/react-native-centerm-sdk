@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, ViewStyle, TouchableOpacityProperties, StyleSheet, Image, TextProperties, TextStyle, ImageStyle } from 'react-native';
 import SwipeComponent from './SwipeComponentView';
-import SwipeButton from './SwipeButton';
 import { ScreenUtil, renderNode } from '../Theme';
 import { ReactNodeType } from '../types';
 import ThemeHoc, { ContextProps } from '../Theme/ThemeHoc';
@@ -11,7 +10,10 @@ const renderIcon = (icon?: any, iconStyle?: ImageStyle): React.ReactNode => {
     return icon;
   }
   return (
-    <Image style={StyleSheet.flatten([{width: ScreenUtil.autoWidth(25), height: ScreenUtil.autoWidth(25)}, iconStyle])} source={icon} />
+    <Image 
+      style={StyleSheet.flatten([{width: ScreenUtil.autoWidth(25), height: ScreenUtil.autoWidth(25)}, iconStyle])} 
+      source={icon} 
+    />
   );
 };
 
