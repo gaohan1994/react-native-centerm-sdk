@@ -92,9 +92,9 @@ class Button extends React.Component<ButtonProps, Stete> {
     } = this.props;
     
     const TouchableWrapperProps: TouchableOpacityProps = {
-      ...rest,
       onPress,
       activeOpacity: 0.3,
+      ...rest,
     };
     const loadingProps = { ...defaultLoadingProps(type, theme) };
     return (

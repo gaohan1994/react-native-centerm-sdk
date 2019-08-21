@@ -62,6 +62,7 @@ export const styles: any = {
     color: type === 'primary' ? 'white' : theme.primary,
     fontSize: ScreenUtil.setSpText(size !== 'small' ? 15 : 12),
     textAlign: 'center',
+    backgroundColor: 'transparent',
   }),
   loadding: {
     marginVertical: 2,
