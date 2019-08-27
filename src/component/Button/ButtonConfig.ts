@@ -63,6 +63,7 @@ export const styles: any = {
     fontSize: ScreenUtil.setSpText(size !== 'small' ? 15 : 12),
     textAlign: 'center',
     backgroundColor: 'transparent',
+    overflow: 'hidden',
   }),
   loadding: {
     marginVertical: 2,

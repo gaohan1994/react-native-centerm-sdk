@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Platform,
   ActivityIndicator, 
   TouchableOpacity, 
   Text, 
@@ -64,7 +65,10 @@ class Button extends React.Component<ButtonProps, Stete> {
       ...styles.button(type, theme),
       ...styles.size(size),
       ...styles.radius(radius),
-      ...styles.shadow,
+      ...Platform.select({
+        ios: styles.shadow,
+        android: {}
+      }),
     }].concat(style);
     
     return StyleSheet.flatten(buttonStyle);
