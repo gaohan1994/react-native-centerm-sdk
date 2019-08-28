@@ -28,6 +28,7 @@ export type ButtonProperties = {
   radius?: boolean;
   linearGradientProps?: any;
   ViewComponent?: any;
+  disabled?: boolean;
 };
 
 export const ButtonDefaultProps: ButtonProperties = {
@@ -36,6 +37,7 @@ export const ButtonDefaultProps: ButtonProperties = {
   size: 'big',
   radius: true,
   loading: false,
+  disabled: false,
 };
 
 const defaultLoadingProps = (type?: ButtonTypeProperty, theme?: ThemeType): ActivityIndicatorProps => ({
@@ -92,11 +94,12 @@ class Button extends React.Component<ButtonProps, Stete> {
       onPress,
       linearGradientProps,
       ViewComponent = View,
+      disabled,
       ...rest
     } = this.props;
     
     const TouchableWrapperProps: TouchableOpacityProps = {
-      onPress,
+      onPress: (disabled === true || loading === true) ? () => { /** */ } : onPress,
       activeOpacity: 0.3,
       ...rest,
     };

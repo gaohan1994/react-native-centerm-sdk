@@ -53,9 +53,9 @@ export const styles: any = {
     }
   },
   shadow: {
-    shadowOffset: { width: 2, height: 2 }, 
-    shadowOpacity: 0.6, 
-    shadowRadius: 6, 
+    shadowOffset: { width: 1, height: 1 }, 
+    shadowOpacity: 0.3, 
+    shadowRadius: 4, 
     elevation: 10 
   },
   title: (type: ButtonTypeProperty, size: ButtonSizeProperty, theme: ThemeType) => ({
