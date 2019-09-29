@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: Gaohan
  * @Date: 2019-07-23 14:16:43
- * @LastEditTime: 2019-09-29 10:26:04
+ * @LastEditTime: 2019-09-29 11:38:55
  * @LastEditors: Please set LastEditors
  -->
 
@@ -29,7 +29,7 @@ yarn add react-native-centerm-sdk
 
 ### Button
 
-[`<Button />` 按钮](./Button.md)
+[`<Button />` 按钮](./doc/Button.md)
 
 <img src="http://net.huanmusic.com/button.jpg" width="100" height="200" />
 
@@ -47,7 +47,7 @@ class Page extends React.Component<any, any> {
 
 ### ListItem
 
-[`<ListItem />` 列表行](./ListItem.md)
+[`<ListItem />` 列表行](./doc/ListItem.md)
 
 <img src="http://net.huanmusic.com/ListItem.jpg" width="100" height="200" />
 

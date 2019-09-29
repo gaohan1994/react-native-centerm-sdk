@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-29 10:21:50
- * @LastEditTime: 2019-09-29 10:32:57
+ * @LastEditTime: 2019-09-29 11:38:08
  * @LastEditors: Please set LastEditors
  -->
 # `<Button />` 按钮
@@ -56,4 +56,4 @@ None.
 ```
 
 ## Screenshots
-![](../screenshots/button.jpg)
+<img src="http://net.huanmusic.com/button.jpg" width="100" height="200" />
