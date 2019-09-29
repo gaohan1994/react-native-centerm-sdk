@@ -1,7 +1,15 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: Gaohan
+ * @Date: 2019-07-23 14:16:43
+ * @LastEditTime: 2019-09-29 10:26:04
+ * @LastEditors: Please set LastEditors
+ -->
 
 # React-Native-Centerm-Sdk
 
 A UI library for react-native. build for Centerm Stuff.
+服务于升腾雨滴的企业级UI库
 
 [![Build Status](https://travis-ci.org/gaohan1994/react-native-centerm-sdk.svg?branch=master)](https://travis-ci.org/gaohan1994/react-native-centerm-sdk)
 [![codecov](https://codecov.io/gh/gaohan1994/react-native-centerm-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/gaohan1994/react-native-centerm-sdk)
@@ -21,6 +29,8 @@ yarn add react-native-centerm-sdk
 
 ### Button
 
+[`<Button />` 按钮](./Button.md)
+
 <img src="http://net.huanmusic.com/button.jpg" width="100" height="200" />
 
 ```js
@@ -36,6 +46,8 @@ class Page extends React.Component<any, any> {
 ```
 
 ### ListItem
+
+[`<ListItem />` 列表行](./ListItem.md)
 
 <img src="http://net.huanmusic.com/ListItem.jpg" width="100" height="200" />
 
