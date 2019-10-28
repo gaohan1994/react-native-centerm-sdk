@@ -75,3 +75,25 @@ export type ListItemProps = {
 } & TouchableOpacityProperties;
 
 export declare class ListItem extends React.Component<ListItemProps, any> {}
+
+export declare class ScreenUtil {
+  static uiWidth: number;
+  static uiHeight: number;
+  static X_WIDTH: number;
+  static X_HEIGHT: number;
+  static screenWidth: number;
+  static screenHeith: number;
+  static scale: number;
+  static widthRadio: number;
+  static heightRadio: number;
+  static scaleIPX: number;
+  static widthRadioIPX: number;
+  static heightRadioIPX: number;
+  static pixel: number;
+  static pixelRatio: number;
+  static fontScale: number;
+  static autoWidth: (width: number) => number;    //传入UI宽度输出适配宽度
+  static autoHeight: (height: number) => number;  //传入UI高度输出适配高度
+  static setSpText: (size: number) => number;     //传入UI字体输出适配字体
+  static isIphoneX: () => boolean;                //返回是否为刘海屏幕
+}

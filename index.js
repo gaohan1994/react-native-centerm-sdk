@@ -1,4 +1,7 @@
-export { request } from './src/common';
+export { 
+  request,
+  ScreenUtil,
+} from './src/common';
 
 export { 
   Button,
